@@ -24,7 +24,7 @@ class GetStart extends StatelessWidget {
               const SizedBox(height: 30,),
               GestureDetector(
                 onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const Welcome()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>  Welcome()));
                 },
                 child: Container(
                   height: 50,

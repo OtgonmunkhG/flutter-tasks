@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/models/constants.dart';
+import 'package:test_app/pages/home.dart';
+import 'package:test_app/provider/weather_service.dart';
 
 import '../models/city.dart';
 
 class Welcome extends StatefulWidget {
-  const Welcome({super.key});
+  final WeatherService weatherService = WeatherService('bf02882866f39ed59436bc9f3cf4cd97');
+
 
   @override
   State<Welcome> createState() => _WelcomeState();
@@ -84,7 +87,7 @@ class _WelcomeState extends State<Welcome> {
         backgroundColor: myConstants.secondaryColor,
         child:  const Icon(Icons.pin_drop),
         onPressed: () {
-          print(selectedCities.length);
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Home(weatherService: widget.weatherService,)));
         },
       ),
     );
