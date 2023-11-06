@@ -5,7 +5,13 @@ class AlertDialogExample extends StatelessWidget {
   void _showAlertDialog(BuildContext context) {
     showDialog(context: context, builder: (BuildContext context) {
       return AlertDialog(
-        title: Text("Alert Dialog Example"),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.ac_unit))
+          ],
+        ),
         content: Text("This is a sample AlertDialog in Flutter"),
         actions: <Widget> [
           TextButton(onPressed: () {
